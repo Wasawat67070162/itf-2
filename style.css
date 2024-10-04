@@ -1,0 +1,33 @@
+.square{
+    width: 500px;
+   
+    text-align: center;
+    font-size: 55px;
+}
+.head{
+    font-size: 35px;
+    text-align: center;
+    display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+  margin: 0px;
+}
+.image{
+    text-align: center;
+}
+.text{
+    font-size: 30px;
+}
+.des{
+    font-size: 25px;
+}
+nav{
+    background-color: rgb(62, 16, 189);
+}
+footer{
+    font-size: 20px;
+    background-color: blanchedalmond;
+    display: block;
+}
