@@ -1,0 +1,8 @@
+.profile{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: chartreuse;
+    position: relative;
+    justify-content: center;
+}

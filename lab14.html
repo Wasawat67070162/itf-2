@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="profile" id = "profile">
+    </div>
+    <h1 id="user">Username</h1>
+    <label>Set Username</label><input type="text" id="name"><button onclick ="setName()">confirm</button>
+    <label>Set profile</label><input type="url" id="backgroundImage"><button onclick="setimage()">confirm</button>
+    <script>
+        const Username = document.getElementById("user");
+        const input = document.getElementById("name");
+        const profile = document.getElementById("profile");
+        function setName(){
+            Username.textContent = input.value
+        }
+        function setimage(){
+            profile.style.backgroundImage = "url(" + input.value
+        }
+    </script>
+</body>
+</html>
