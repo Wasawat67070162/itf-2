@@ -3,24 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>lab 14</title>
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    <div class="profile" id = "profile">
+    <div class="container">
+        <div class="profile" id="profile">
+            <div class="notification">1</div>
+        </div>
+        <h1 id="user" class="username">
+            <a href="https://www.instagram.com/wasawatnatphan/">Wasawat </a>
+        </h1>
+        <div class="input-group">
+            <label for="name">Username</label>
+            <input type="text" id="name" placeholder="Enter Username">
+            <button onclick="setName()">Confirm</button>
+        </div>
+        <div class="input-group">
+            <label for="backgroundImage">Profile</label>
+            <input type="url" id="backgroundImage" placeholder="Enter Image">
+            <button onclick="setImage()">Confirm</button>
+        </div>
+        <div class="input-group">
+            <label for="contactName">Name</label>
+            <input type="text" id="contactName" placeholder="Enter Name">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" placeholder="Enter Phone Number">
+            <button class="add-btn" onclick="addContact()">Add</button>
+            <button class="export-btn" onclick="exportContacts()">Export</button>
+        </div>
+        <table id="contact-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                </tr>
+            </thead>
+            <tbody id="contact-list">
+            </tbody>
+        </table>
     </div>
-    <h1 id="user">Username</h1>
-    <label>Set Username</label><input type="text" id="name"><button onclick ="setName()">confirm</button>
-    <label>Set profile</label><input type="url" id="backgroundImage"><button onclick="setimage()">confirm</button>
+
     <script>
         const Username = document.getElementById("user");
         const input = document.getElementById("name");
         const profile = document.getElementById("profile");
-        function setName(){
-            Username.textContent = input.value
+        function setName() {
+            Username.textContent = input.value;
         }
-        function setimage(){
-            profile.style.backgroundImage = "url(" + input.value
+        function setImage() {
+            const imageUrl = document.getElementById("backgroundImage").value;
+            profile.style.backgroundImage = `url(${imageUrl})`;
+        }
+
+        let contacts = [];
+        function addContact() {
+            const name = document.getElementById('contactName').value;
+            const phone = document.getElementById('phone').value;
+            if (name && phone) {
+                contacts.push({ name, phone });
+                displayContacts();
+            }
+        }
+
+        function displayContacts() {
+            const contactList = document.getElementById('contact-list');
+            contactList.innerHTML = '';
+            contacts.forEach((contact, index) => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${index + 1}</td><td>${contact.name}</td><td>${contact.phone}</td>`;
+                contactList.appendChild(row);
+            });
+        }
+
+        function exportContacts() {
+            let csvContent = "data:text/csv;charset=utf-8,No.,Name,Phone Number\n";
+            contacts.forEach((contact, index) => {
+                csvContent += `${index + 1},${contact.name},${contact.phone}\n`;
+            });
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "contacts.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>

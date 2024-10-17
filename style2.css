@@ -1,8 +1,115 @@
-.profile{
-    width: 350px;
-    height: 350px;
-    border-radius: 50%;
-    background-color: chartreuse;
-    position: relative;
+body {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+}
+
+.profile {
+    width: 183px;
+    height: 183px;
+    border-radius: 50%;
+    background-image: url('https://scontent.fbkk29-1.fna.fbcdn.net/v/t1.15752-9/462538906_1278009960222873_4472394774258869982_n.jpg?stp=dst-jpg_s552x414&_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeF71g6p2HRE4_oLR5u9DX-ts9sYQqUm2Aqz2xhCpSbYCo_eP2hWq8b4vDnoqTDhIi3ZEFbV96IyabkCIKWMOm0b&_nc_ohc=1y2tdsFWhnwQ7kNvgFh12uW&_nc_zt=23&_nc_ht=scontent.fbkk29-1.fna&_nc_gid=Aggddi_eg3MmXcKneZJK6H-&oh=03_Q7cD1QG25H974UpWlbgFMSsVyh3-iIErFm1uwHHDFpl3-3h-UQ&oe=6738682C');
+    background-color: chartreuse;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+.notification {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: red;
+    border-radius: 50%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    bottom: 0;
+    right: 0;
+}
+
+.username {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.username:hover {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.input-group {
+    margin: 15px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.add-btn {
+    background-color: #28a745;
+}
+
+.add-btn:hover {
+    background-color: #218838;
+}
+
+.export-btn {
+    background-color: #007bff;
+}
+
+.export-btn:hover {
+    background-color: #0056b3;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+table th {
+    background-color: #f4f4f4;
 }
